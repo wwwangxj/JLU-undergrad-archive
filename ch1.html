@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第一章作业 · 数与信息</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+section.q{margin:38px 0 46px;padding-top:6px}
+section.q h2{font-size:20px;margin:0 0 14px;padding:0;border:0}
+.qkind{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);
+  background:var(--accent-soft);border-radius:20px;padding:2px 10px;margin-right:10px;
+  vertical-align:2px}
+.stem{background:#f7f9fd;border-left:3px solid #c9d8ee;border-radius:0 8px 8px 0;
+  padding:12px 16px;color:var(--ink-2);font-size:15px;margin-bottom:18px}
+.ans p{margin:10px 0}
+figure{margin:16px 0}
+figure img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;
+  background:#fff;display:block}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">计算思维与计算科学 · 作业存档</a>
+    <nav class="site-nav"><a href="index.html">目录</a><a href="ch1.html">第一章</a><a href="ch2.html">第二章</a></nav>
+  </div>
+</header>
+<main class="wrap">
+  <h1 class="page-title">第一章作业 · 数与信息</h1>
+  <p class="page-sub">题量 6 · 满分 100 · 计算题 1 题、简答题 5 题 ｜ 以下为本人提交的作答原文</p>
+  <nav class="toc"><a href="#q1" class="toc-2">第 1 题 · 香农信道容量计算</a><a href="#q2" class="toc-2">第 2 题 · 姓名汉字编码与 IEEE754 解释</a><a href="#q3" class="toc-2">第 3 题 · Cantor 配对函数</a><a href="#q4" class="toc-2">第 4 题 · √n 无理性证明</a><a href="#q5" class="toc-2">第 5 题 · 4bit 乘积的熵与互信息</a><a href="#q6" class="toc-2">第 6 题 · 等概率时熵最大</a></nav>
+  <article>
+<section class="q" id="q1">
+<h2><span class="qkind">计算题</span>第 1 题</h2>
+<div class="stem">在 4G 移动通信情况下，假设使用带宽 20M，良好情况下，信噪比为 20dB，计算理想的传输速率。对于 5G 移动通信，使用厘米波载波情况下，信道带宽最大 100M 赫兹，假设信噪比为 10dB，计算理想传输速率。</div>
+<div class="ans">
+<figure><img src="assets/ch1/01_01.jpg" alt="作答截图" loading="lazy"></figure>
+<figure><img src="assets/ch1/01_02.jpg" alt="作答截图" loading="lazy"></figure>
+</div></section>
+<section class="q" id="q2">
+<h2><span class="qkind">简答题</span>第 2 题</h2>
+<div class="stem">查询自己名字的汉字编码，GB 编码和 Unicode 编码分别是多少？对于这些编码的前 4 个字节，将其看待为 32 位整数的话，值是多少；将其看待为 float，值是多少？编写一个通用的 C 语言程序，实现上述功能。</div>
+<div class="ans">
+<p>王希嘉</p>
+<p>GBK机内码：CD F5 CF A3 BC CE，6 字节</p>
+<p>UTF-8：E7 8E 8B E5 B8 8C E5 98 89，9字节</p>
+<figure><img src="assets/ch1/02_01.jpg" alt="作答截图" loading="lazy"></figure>
+<figure><img src="assets/ch1/02_02.png" alt="作答截图" loading="lazy"></figure>
+</div></section>
+<section class="q" id="q3">
+<h2><span class="qkind">简答题</span>第 3 题</h2>
+<div class="stem">将 a 和 b 两个自然数（不限定大小），合成一个不重复的新的自然数 c，使得 (a,b) 和 c 构成一一映射。写出映射和反映射的公式，以及程序。</div>
+<div class="ans">
+<figure><img src="assets/ch1/03_01.jpg" alt="作答截图" loading="lazy"></figure><figure><img src="assets/ch1/03_02.png" alt="作答截图" loading="lazy"></figure>
+</div></section>
+<section class="q" id="q4">
+<h2><span class="qkind">简答题</span>第 4 题</h2>
+<div class="stem">证明 √2 不是有理数；更进一步，证明当 n 不是完全平方数时，√n 不是有理数。</div>
+<div class="ans">
+<figure><img src="assets/ch1/04_01.jpg" alt="作答截图" loading="lazy"></figure>
+<figure><img src="assets/ch1/04_02.jpg" alt="作答截图" loading="lazy"></figure>
+</div></section>
+<section class="q" id="q5">
+<h2><span class="qkind">简答题</span>第 5 题</h2>
+<div class="stem">编写程序，计算两个 4bit 数的乘积构成的集合的熵值，计算输入集合和输出集合之间的互信息熵。</div>
+<div class="ans">
+<figure><img src="assets/ch1/05_01.png" alt="作答截图" loading="lazy"></figure>
+</div></section>
+<section class="q" id="q6">
+<h2><span class="qkind">简答题</span>第 6 题</h2>
+<div class="stem">证明信息熵的公式中，对于 n 个可能状态，当所有状态等概率分布时熵值取最大值。</div>
+<div class="ans">
+<figure><img src="assets/ch1/06_01.jpg" alt="作答截图" loading="lazy"></figure>
+</div></section>
+  </article>
+</main>
+<footer class="site-foot"><div class="wrap">王希嘉 · 计算思维与计算科学课程作业</div></footer>
+</body>
+</html>
