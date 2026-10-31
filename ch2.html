@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第二章作业 · 计算的本质</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+section.q{margin:38px 0 46px;padding-top:6px}
+section.q h2{font-size:20px;margin:0 0 14px;padding:0;border:0}
+.qkind{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);
+  background:var(--accent-soft);border-radius:20px;padding:2px 10px;margin-right:10px;
+  vertical-align:2px}
+.stem{background:#f7f9fd;border-left:3px solid #c9d8ee;border-radius:0 8px 8px 0;
+  padding:12px 16px;color:var(--ink-2);font-size:15px;margin-bottom:18px}
+.ans p{margin:10px 0}
+figure{margin:16px 0}
+figure img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;
+  background:#fff;display:block}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">计算思维与计算科学 · 作业存档</a>
+    <nav class="site-nav"><a href="index.html">目录</a><a href="ch1.html">第一章</a><a href="ch2.html">第二章</a></nav>
+  </div>
+</header>
+<main class="wrap">
+  <h1 class="page-title">第二章作业 · 计算的本质</h1>
+  <p class="page-sub">题量 4 · 满分 100 · 简答题 2 题、论述题 2 题 ｜ 以下为本人提交的作答原文</p>
+  <nav class="toc"><a href="#q1" class="toc-2">第 1 题 · 为什么是二进制</a><a href="#q2" class="toc-2">第 2 题 · 为什么指令分步执行</a><a href="#q3" class="toc-2">第 3 题 · 仅用 if + goto 输出素数</a><a href="#q4" class="toc-2">第 4 题 · V2 统计字节中 1 的个数</a></nav>
+  <article>
+<section class="q" id="q1">
+<h2><span class="qkind">简答题</span>第 1 题</h2>
+<div class="stem">为什么通用计算机基本上都是二进制的？</div>
+<div class="ans">
+<p>因为二进制在物理实现、逻辑对应和运算规约上都最简单。</p>
+<p>上课说从开关、继电器、三极管讲到逻辑门，再把数值运算规约到二进制加法，这条路线决定了通用计算机采用二进制。</p>
+<p>物理上，开关通断、三极管导通/截止、电平高低只有两个稳定状态，抗干扰强、成本低、可靠性高。</p>
+<p>逻辑上，二值正好对应布尔代数的真/假，与门、或门、非门可以直接用电路实现。</p>
+<p>运算上，整数运算可逐步规约到二进制加法，半加器、全加器容易用逻辑门搭出来。</p>
+<p>存储上，数字计算机每个单元只存0/1，与“离散状态”的前提一致。</p>
+</div></section>
+<section class="q" id="q2">
+<h2><span class="qkind">简答题</span>第 2 题</h2>
+<div class="stem">为什么将指令分成几步执行？</div>
+<div class="ans">
+<p>因为CPU是同步时序电路，按节拍工作，一条指令要分“取指令、译码、取操作数、运算、写回结果”几步完成。</p>
+<p>第一，总线一个时刻只能有一个数据提供者，分步可以用控制信号分时接通不同部件，避免冲突</p>
+<p>第二，每步只做一件明确的事，控制逻辑简单，指令容易扩展。</p>
+<p>第三，分步后不同步骤可以由不同功能部件重叠执行，形成指令流水，提高整体吞吐率。</p>
+<p>所以分步既是为了控制简单、避免冲突，也是为了提高效率。</p>
+</div></section>
+<section class="q" id="q3">
+<h2><span class="qkind">论述题</span>第 3 题</h2>
+<div class="stem">仅使用 if 和 goto 作为控制流语句（不准使用 else，循环语句，子程序调用），使用 C 语言编写程序，输出 100 以内的素数。</div>
+<div class="ans">
+<figure><img src="assets/ch2/03_01.png" alt="作答截图" loading="lazy"></figure>
+</div></section>
+<section class="q" id="q4">
+<h2><span class="qkind">论述题</span>第 4 题</h2>
+<div class="stem">使用示例指令系统（V2）实现程序，功能如下：统计 0600H 单元的字节的 2 进制表示中有多少个 1，结果写入 0610H 单元，并将该程序翻译成机器码。</div>
+<div class="ans">
+<figure><img src="assets/ch2/04_01.png" alt="作答截图" loading="lazy"></figure><figure><img src="assets/ch2/04_02.png" alt="作答截图" loading="lazy"></figure><figure><img src="assets/ch2/04_03.png" alt="作答截图" loading="lazy"></figure><figure><img src="assets/ch2/04_04.png" alt="作答截图" loading="lazy"></figure><figure><img src="assets/ch2/04_05.png" alt="作答截图" loading="lazy"></figure>
+<p>验证：</p>
+<figure><img src="assets/ch2/04_06.jpg" alt="作答截图" loading="lazy"></figure>
+<figure><img src="assets/ch2/04_07.jpg" alt="作答截图" loading="lazy"></figure>
+</div></section>
+  </article>
+</main>
+<footer class="site-foot"><div class="wrap">王希嘉 · 计算思维与计算科学课程作业</div></footer>
+</body>
+</html>
